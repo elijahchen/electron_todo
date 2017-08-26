@@ -1,0 +1,22 @@
+{
+  "name": "electron-todo",
+  "version": "1.0.0",
+  "description": "As the name states, it's a todo application that is cross platform and browser-less!",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elijahchen/electron_todo.git"
+  },
+  "author": "EC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elijahchen/electron_todo/issues"
+  },
+  "homepage": "https://github.com/elijahchen/electron_todo#readme",
+  "dependencies": {
+    "electron": "^1.7.5"
+  }
+}
