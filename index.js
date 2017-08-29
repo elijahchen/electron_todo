@@ -7,6 +7,7 @@ let addWindow;
 app.on('ready', () => {
   mainWindow = new BrowserWindow({});
   mainWindow.loadURL(`file://${__dirname}/main.html`);
+  mainWindow.on('closed', () =>  app.quit()); //Listener, quits the entire app if the mainWindow is terminated
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate); //Ready the menu collection
   Menu.setApplicationMenu(mainMenu); //Fire up the custom defined menu
