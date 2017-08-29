@@ -16,5 +16,5 @@ As the name states, it's a todo application that is cross platform and browser-l
 - The user will be greeted with a window, this will be the main window
 - There will be three menu options under file, "New Todo, Clear Todo, Quit"
 - "New Todo" Will fire up another window that will contain an input field and a submittal button
-- "Clear Todos" Will clear the <ul> of the added todos
+- "Clear Todos" Will clear the list of the added todos
 - "Quit" Will terminate the application
