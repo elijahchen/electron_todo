@@ -36,7 +36,15 @@ const menuTemplate = [
     submenu: [
       {
         label: 'New Todo',
+        accelerator: process.platform === 'darwin' ? 'Command+N' : 'Ctrl+N',
         click() { createAddWindow(); }
+      },
+      {
+        label: 'Clear Todos',
+        accelerator: process.platform === 'darwin' ? 'Command+Alt+C' : 'Ctrl+Alt+C',
+        click() {
+          mainWindow.webContents.send('todo:clear');
+        }
       },
       {
         label: 'Quit',
@@ -66,6 +74,7 @@ if(process.env.NODE_ENV !== 'production'){
   menuTemplate.push({
     label: 'Developer Menu',
     submenu: [
+      { role: 'reload' },
       {
         label: 'Toggle Developer Tools',
         accelerator: process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
