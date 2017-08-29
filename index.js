@@ -49,6 +49,23 @@ const menuTemplate = [
   }
 ];
 
+//Checks if native OS is OSX
 if(process.platform === 'darwin'){
   menuTemplate.unshift({});
+}
+
+//Checks if the application is running in production, else enable developer console
+if(process.env.NODE_ENV !== 'production'){
+  menuTemplate.push({
+    label: 'Developer Menu',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
+        click(item, focusedWindow){
+          focusedWindow.toggleDevTools();
+        }
+      }
+    ]
+  })
 }
