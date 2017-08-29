@@ -2,7 +2,7 @@
 
 </head>
 <body>
-  <form class="" action="index.html" method="post">
+  <form>
     <div class="">
       <label for="">Enter a new task</label>
       <input autofocus type="text" name="" value=""/>
@@ -17,7 +17,7 @@
     document.querySelector('form').addEventListener('submit', (event) => {
       event.preventDefault();
 
-      const { value } = document.querySelector('input').value;
+      let value = document.querySelector('input').value;
       ipcRenderer.send('todo:add', value);
     });
   </script>
